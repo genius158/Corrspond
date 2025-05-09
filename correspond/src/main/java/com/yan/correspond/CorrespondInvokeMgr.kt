@@ -8,6 +8,7 @@ import android.os.IBinder
 import android.os.SystemClock
 import android.util.Log
 import com.yan.correspond.CorrespondConstants.SERVICE_CONNECT_TIMEOUT
+import java.lang.IllegalArgumentException
 import java.util.concurrent.ConcurrentHashMap
 
 /**
@@ -106,10 +107,9 @@ class CorrespondInvokeMgr {
                 remoteMap[className] = api
                 return api
             } else {
-                Log.i(TAG, "$className must instance of CorrespondInvokeApi.Stub")
+                throw IllegalArgumentException("$className must instance of CorrespondInvokeApi.Stub")
             }
         }
-        return null
     }
 
     /**
