@@ -1,8 +1,11 @@
 # Corrspond
+
 跨进程通用接口实现 demo
+
 直接使用aidl，增删接口会存在兼容问题
 service app与client app使用的aidl接口不一致，会导致请求失败甚至崩溃的问题
 
+--- 
 该demo演示如何通过一个方法涵盖所有的binder接口调用
 
 
